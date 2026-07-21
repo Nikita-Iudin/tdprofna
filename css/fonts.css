@@ -1,0 +1,66 @@
+/* Сопоставление оригинальных шрифтов со стандартными Google Fonts (Inter) */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@font-face {
+	font-family: "RobotoRegular";
+	src: local('Inter'), local('Inter-Regular');
+}
+
+@font-face {
+	font-family: "RobotoLight";
+	src: local('Inter Light'), local('Inter-Light');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "RobotoMedium";
+	src: local('Inter Medium'), local('Inter-Medium');
+	font-weight: 500;
+}
+
+@font-face {
+	font-family: "RobotoBold";
+	src: local('Inter Bold'), local('Inter-Bold');
+	font-weight: 700;
+}
+
+@font-face {
+	font-family: "BebasRegular";
+	src: local('Inter'), local('Inter-Regular');
+}
+
+@font-face {
+	font-family: "BebasBook";
+	src: local('Inter'), local('Inter-Regular');
+}
+
+@font-face {
+	font-family: "BebasBold";
+	src: local('Inter ExtraBold'), local('Inter-ExtraBold'), local('Inter Bold'), local('Inter-Bold');
+	font-weight: 800;
+}
+
+@font-face {
+	font-family: "BebasLight";
+	src: local('Inter Light'), local('Inter-Light');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: "BebasThin";
+	src: local('Inter Thin'), local('Inter-Thin');
+	font-weight: 100;
+}
+
+@font-face {
+	font-family: 'GlroyLight';
+	src: local('Inter Light'), local('Inter-Light');
+	font-weight: 300;
+}
+
+@font-face {
+	font-family: 'GlroyBold';
+	src: local('Inter Bold'), local('Inter-Bold');
+	font-weight: 700;
+}

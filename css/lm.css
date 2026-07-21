@@ -1,0 +1,80 @@
+
+section.litemaster{
+	bottom: 0px;
+	left: 0px;
+	background-color: rgb(255,255,255,0.2);
+	transition: all .70s;
+	color: #000;
+	font-size: 10px;
+	padding: 5px 10px;
+	border-radius: 20px;
+}
+
+
+
+section.litemaster:hover{
+	background-color: rgb(255,255,255,0.9);
+	color: #000;
+}
+
+
+@media only screen and (max-width : 992px) {
+	section.litemaster{
+		background-color: rgb(255,255,255);
+		color: #000;
+	}
+}
+
+section.litemaster img {
+	width: 30px;
+	opacity: 0.7;
+	margin-right: 10px;
+	background: #828282;
+	padding: 6px;
+	border-radius: 50%;
+}
+
+section.litemaster span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+
+table.error{
+	background: url(../images/no_pages.png) no-repeat;
+	background-attachment: fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+	width: 100%;
+	height: 100vh;
+	margin: 0px;
+	padding: 0px;
+	text-align: center;
+}
+table.error tr td{
+	width: 100%;
+	height: 100vh;
+}
+table.error tr td img{
+	width: 100px;
+	margin-bottom: 20px;
+}
+table.error tr td h1{
+	margin: 0px;
+	text-transform: uppercase;
+	color: #ae2e2e;
+}
+table.error tr td a{
+	display: inline-block;
+	width: auto;
+	background-color: #ae2e2e;
+	padding: 10px 20px;
+	color: #fff;
+	margin-top: 20px;
+	transition:0.7s;
+}
+table.error tr td a:hover{
+	opacity:0.7;
+}
+
