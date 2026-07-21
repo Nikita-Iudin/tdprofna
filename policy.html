@@ -25,7 +25,7 @@
 <header class="top-nav scrolled" style="position: sticky; top: 0; opacity: 1; pointer-events: auto; transform: translateY(0); display: block;">
     <div class="container nav-container">
         <a href="index.html" class="nav-logo" style="text-decoration: none; display: flex; align-items: center;">
-            <img src="img/logo.png" alt="Логотип">
+            <img src="img/ЛОГОТИП ВМЕСТО ТРУБЫ.jpg" alt="Логотип">
             <span>МЕТАЛЛОБАЗА 73</span>
         </a>
         <div class="nav-menu">
@@ -74,7 +74,7 @@
         <!-- Левая колонка: О компании -->
         <div class="footer-col footer-about">
             <div class="footer-logo">
-                <img src="img/logo.png" alt="Логотип">
+                <img src="img/ЛОГОТИП ВМЕСТО ТРУБЫ.jpg" alt="Логотип">
                 <span>МЕТАЛЛОБАЗА 73</span>
             </div>
             <p class="footer-desc">
@@ -107,17 +107,19 @@
             <div class="footer-contact-item">
                 <i class="fa fa-map-marker"></i>
                 <div>
-                    <span>Адрес склада:</span>
+                    <span>Адрес:</span>
                     <strong>г. Ульяновск, Московское шоссе, 64Б</strong>
                 </div>
             </div>
             <div class="footer-contact-item">
                 <i class="fa fa-phone"></i>
-                <div>
+                <div style="flex-direction: column; align-items: flex-start;">
                     <span>Телефоны:</span>
-                    <a href="tel:+79022136060">+7 902 213-60-60</a>
-                    <a href="tel:+78422585542">(8422) 58-55-42</a>
-                    <a href="tel:+79041952295">+7 904 195-22-95</a>
+                    <div class="phones-list" style="margin-top: 4px;">
+                        <a href="tel:+78422585542"><span>Рабочий:</span> (8422) 58-55-42</a>
+                        <a href="tel:+79022136060"><span>Заказы:</span> +7 902 213-60-60</a>
+                        <a href="tel:+79041952295"><span>Склад:</span> +7 904 195-22-95</a>
+                    </div>
                 </div>
             </div>
             <div class="footer-contact-item">
@@ -151,10 +153,10 @@
         <button class="modal-close-btn" onclick="document.getElementById('callbackModal').style.display='none'">&times;</button>
         <h2 class="modal-title">Обратный звонок</h2>
         <p class="modal-subtitle">Оставьте ваши контакты, и наш специалист свяжется с вами в течение 15 минут для уточнения деталей.</p>
-        <form class="form" onsubmit="alert('Заявка отправлена!'); document.getElementById('callbackModal').style.display='none'; return false;">
+        <form class="form" id="callbackForm" onsubmit="submitForm(event)">
             <div class="modal-inputs">
-                <input type="text" placeholder="Ваше имя" required class="modal-input-field">
-                <input type="tel" placeholder="Ваш телефон" required class="modal-input-field">
+                <input type="text" name="name" placeholder="Ваше имя" required class="modal-input-field">
+                <input type="tel" name="phone" placeholder="Ваш телефон" required class="modal-input-field">
                 <div class="modal-policy-wrapper">
                     <input type="checkbox" id="policy" required class="modal-checkbox">
                     <label for="policy" style="cursor: pointer;">
@@ -167,5 +169,38 @@
     </div>
 </div>
 
+<script>
+    async function submitForm(event) {
+        event.preventDefault();
+        const form = event.target;
+        const formData = new FormData(form);
+        const submitBtn = form.querySelector('.modal-submit-btn');
+        const originalText = submitBtn.textContent;
+        
+        submitBtn.textContent = 'Отправка...';
+        submitBtn.disabled = true;
+
+        try {
+            const response = await fetch('send.php', {
+                method: 'POST',
+                body: formData
+            });
+
+            if (response.ok) {
+                alert('Заявка успешно отправлена!');
+                form.reset();
+                document.getElementById('callbackModal').style.display = 'none';
+            } else {
+                alert('Произошла ошибка при отправке заявки. Попробуйте позже.');
+            }
+        } catch (error) {
+            console.error('Ошибка:', error);
+            alert('Произошла ошибка. Проверьте подключение к интернету.');
+        } finally {
+            submitBtn.textContent = originalText;
+            submitBtn.disabled = false;
+        }
+    }
+</script>
 </body>
 </html>

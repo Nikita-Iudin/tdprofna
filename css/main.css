@@ -318,6 +318,7 @@ div.info ul li img {
     gap: 16px;
     font-size: 100px;
     font-family: 'BebasBold';
+    color: #ffff00;
     margin: 0;
 }
 
@@ -914,7 +915,7 @@ a.button.button-callback:hover {
 .nav-logo span {
     font-family: 'BebasBold', sans-serif !important;
     font-size: 24px !important;
-    color: #fff !important;
+    color: #ffff00 !important;
     letter-spacing: 1px !important;
     text-transform: uppercase;
     margin: 0;
@@ -1160,7 +1161,7 @@ a.button.button-callback:hover {
 .footer-logo span {
     font-family: 'BebasBold', sans-serif;
     font-size: 28px;
-    color: #fff;
+    color: #ffff00;
     letter-spacing: 1.5px;
     text-transform: uppercase;
 }
@@ -1223,11 +1224,18 @@ a.button.button-callback:hover {
     display: none !important;
 }
 
-.footer-contact-item div {
+.footer-contact-item > div {
     display: flex;
     flex-direction: row;
     gap: 4px;
     align-items: center;
+}
+
+.footer-contact-item .phones-list {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
 }
 
 .footer-contact-item span {
