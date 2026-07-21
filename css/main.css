@@ -1993,7 +1993,7 @@ body {
    ============================================== */
 .product-card__image {
     width: calc(100% + 60px);
-    height: 180px;
+    height: 360px;
     margin: -35px -30px 20px -30px;
     overflow: hidden;
     position: relative;
