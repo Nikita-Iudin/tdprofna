@@ -360,11 +360,22 @@
         }
 
         .nav-logo span {
-            font-size: 18px !important;
+            font-size: 15px !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .nav-logo img {
+            width: 28px !important;
+        }
+
+        .nav-callback-btn {
+            font-size: 11px !important;
+            padding: 6px 10px !important;
+            white-space: nowrap !important;
         }
 
         .nav-container {
-            padding: 0 15px !important;
+            padding: 0 10px !important;
         }
     }
 
